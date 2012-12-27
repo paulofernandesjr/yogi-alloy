@@ -2,19 +2,23 @@
 
 This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi) command line tool.
 
+## Usage
+
+	yogi alloy [command]
+	
 ## Install
 
 	npm -g install yogi
 
 ## Setup
 
+Install all dependencies:
+
+	npm install .
+
 Create a symbolic link for `yogi-alloy.js`, for example:
 
-	ln -s /Users/you/yogi-alloy/bin/yogi-alloy.js /usr/local/bin/yogi-alloy.js
-
-## Usage
-
-	yogi alloy [command]
+	ln -s /Users/you/yogi-alloy/bin/yogi-alloy.js /usr/local/bin/yogi-alloy
 
 ## Available commands:
 
