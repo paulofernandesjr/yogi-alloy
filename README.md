@@ -33,8 +33,3 @@ Basic usage:
 Result:
 
 `.foo-bar {}`
-
-Example
--------
-
-This very simple example shows that logging and the built in `config` objects work.
