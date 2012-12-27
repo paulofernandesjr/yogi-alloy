@@ -100,7 +100,7 @@ var Alloy = {
 
         if (instance._isRepo(instance.ALLOY_WEBSITE)) {
 
-            if (!instance._hasFolder('node_modules')) {
+            if (!file.hasFolder('node_modules')) {
                 instance._installDocpad();
             } else {
                 instance._runDocpad();
@@ -152,11 +152,6 @@ var Alloy = {
         log.bail(util.bad + ' You must be inside ' + repoName + ' repo for this to work!');
 
         return false;
-    },
-
-    _hasFolder: function(folderName) {
-        var fs = require('fs');
-        return fs.existsSync(folderName);
     },
 
     _toPascalCase: function(str) {
