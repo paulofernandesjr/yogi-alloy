@@ -2,11 +2,10 @@
 
 This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi) command line tool.
 
-
 ## Syntax
 
 	yogi alloy [command]
-	
+
 ## Available commands:
 
 ### 1) Alloy Twitter Bootstrap commands
