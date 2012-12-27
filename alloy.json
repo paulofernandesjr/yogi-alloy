@@ -1,0 +1,12 @@
+{
+    "compass": {
+        "css-dir": ".",
+        "force": null,
+        "images-dir": "img",
+        "no-line-comments": null,
+        "output-style": "expanded",
+        "sass-dir": "lib",
+        "time": null,
+        "trace": null
+    }
+}

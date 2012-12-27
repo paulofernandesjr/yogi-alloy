@@ -1,0 +1,17 @@
+{
+    "name": "yogi-alloy",
+    "description": "Example yogi external command",
+    "author": "Eduardo Lundgren <eduardo.lundgren@liferay.com>",
+    "version": "0.0.1",
+    "keywords": [
+        "yogi", "external", "commands", "helpers"
+    ],
+    "bin": {
+        "yogi-alloy": "./bin/yogi-alloy.js"
+    },
+    "dependencies": {
+        "command": "*",
+        "optimist": "*"
+    },
+    "preferGlobal": "true"
+}
