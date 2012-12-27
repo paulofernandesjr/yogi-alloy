@@ -46,7 +46,7 @@ var Alloy = {
     doCompileCss: function(payload, parsed) {
         var instance = this;
 
-        if (instance._isTwitterBootstrapFolder()) {
+        if (instance._isFolder(instance.TWITTER_BOOTSTRAP)) {
             compass.run('compile', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
             compass.run('compile',[ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
         }
@@ -62,7 +62,7 @@ var Alloy = {
             process.exit(1);
         }
 
-        if (instance._isTwitterBootstrapFolder()) {
+        if (instance._isFolder(instance.TWITTER_BOOTSTRAP)) {
             files = file.find(root, instance.REGEX_CSS_EXTENSION);
 
             files.forEach(function(filename) {
@@ -86,7 +86,7 @@ var Alloy = {
     doWatchCss: function(payload, parsed) {
         var instance = this;
 
-        if (instance._isTwitterBootstrapFolder()) {
+        if (instance._isFolder(instance.TWITTER_BOOTSTRAP)) {
             compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
             compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
         }
@@ -101,15 +101,15 @@ var Alloy = {
         return reserved.hasOwnProperty(word);
     },
 
-    _isTwitterBootstrapFolder: function() {
+    _isFolder: function(folderName) {
         var instance = this,
             origin = git.origin();
 
-        if (origin.indexOf(instance.TWITTER_BOOTSTRAP) > -1) {
+        if (origin.indexOf(folderName) > -1) {
             return true;
         }
 
-        log.bail(util.bad + ' You must be inside ' + instance.TWITTER_BOOTSTRAP + ' repo for this to work!');
+        log.bail(util.bad + ' You must be inside ' + folderName + ' repo for this to work!');
 
         return false;
     },
