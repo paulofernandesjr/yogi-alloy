@@ -47,7 +47,7 @@ var Alloy = {
     doCompileCss: function(payload, parsed) {
         var instance = this;
 
-        if (instance._isFolder(instance.TWITTER_BOOTSTRAP)) {
+        if (instance._isRepo(instance.TWITTER_BOOTSTRAP)) {
             compass.run('compile', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
             compass.run('compile',[ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
         }
@@ -63,7 +63,7 @@ var Alloy = {
             process.exit(1);
         }
 
-        if (instance._isFolder(instance.TWITTER_BOOTSTRAP)) {
+        if (instance._isRepo(instance.TWITTER_BOOTSTRAP)) {
             files = file.find(root, instance.REGEX_CSS_EXTENSION);
 
             files.forEach(function(filename) {
@@ -87,7 +87,7 @@ var Alloy = {
     doWatchCss: function(payload, parsed) {
         var instance = this;
 
-        if (instance._isFolder(instance.TWITTER_BOOTSTRAP)) {
+        if (instance._isRepo(instance.TWITTER_BOOTSTRAP)) {
             compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
             compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
         }
@@ -96,7 +96,7 @@ var Alloy = {
     doRunSite: function(payload, parsed) {
         var instance = this;
 
-        if (instance._isFolder(instance.ALLOY_WEBSITE)) {
+        if (instance._isRepo(instance.ALLOY_WEBSITE)) {
             log.info('it worked!');
         }
     },
@@ -110,15 +110,15 @@ var Alloy = {
         return reserved.hasOwnProperty(word);
     },
 
-    _isFolder: function(folderName) {
+    _isRepo: function(repoName) {
         var instance = this,
             origin = git.origin();
 
-        if (origin.indexOf(folderName) > -1) {
+        if (origin.indexOf(repoName) > -1) {
             return true;
         }
 
-        log.bail(util.bad + ' You must be inside ' + folderName + ' repo for this to work!');
+        log.bail(util.bad + ' You must be inside ' + repoName + ' repo for this to work!');
 
         return false;
     },
