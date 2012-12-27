@@ -1,10 +1,10 @@
 {
     "name": "yogi-alloy",
-    "description": "Example yogi external command",
+    "description": "This project provides common AlloyUI tasks for yogi command line tool.",
     "author": "Eduardo Lundgren <eduardo.lundgren@liferay.com>",
     "version": "0.0.1",
     "keywords": [
-        "yogi", "external", "commands", "helpers"
+        "yogi", "alloy", "external", "commands", "helpers"
     ],
     "bin": {
         "yogi-alloy": "./bin/yogi-alloy.js"
