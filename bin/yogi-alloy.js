@@ -12,7 +12,9 @@
 var YOGI_PATH = process.env.YOGI_PATH,
     YOGI_ALLOY_PATH = __dirname + '/../';
 
-var path = require('path');
+// -- Global Requires --------------------------------------------------------
+var path = require('path'),
+    spawn = require('child_process').spawn;
 
 function requireAlloy(p) {
     return require(path.join(YOGI_ALLOY_PATH, p));
@@ -97,8 +99,37 @@ var Alloy = {
         var instance = this;
 
         if (instance._isRepo(instance.ALLOY_WEBSITE)) {
-            log.info('it worked!');
+
+            if (!instance._hasFolder('node_modules')) {
+                instance._installDocpad();
+            } else {
+                instance._runDocpad();
+            }
+
         }
+    },
+
+    _installDocpad: function() {
+        var instance = this,
+            docpadInstall = spawn('docpad', ['install', '.']);
+
+        docpadInstall.stdout.on('data', function (data) {
+            log.info(data);
+        });
+
+        docpadInstall.on('exit', function (code) {
+            if (code == 0) {
+                instance._runDocpad();
+            }
+        });
+    },
+
+    _runDocpad: function() {
+        var docpadRun = spawn('docpad', ['run', '.']);
+
+        docpadRun.stdout.on('data', function (data) {
+            log.info(data);
+        });
     },
 
     _isReservedArg: function(word) {
@@ -121,6 +152,11 @@ var Alloy = {
         log.bail(util.bad + ' You must be inside ' + repoName + ' repo for this to work!');
 
         return false;
+    },
+
+    _hasFolder: function(folderName) {
+        var fs = require('fs');
+        return fs.existsSync(folderName);
     },
 
     _toPascalCase: function(str) {
