@@ -2,7 +2,17 @@
 
 This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi) command line tool.
 
-## Syntax
+## Install
+
+	npm -g install yogi
+
+## Setup
+
+Create a symbolic link for `yogi-alloy.js`, for example:
+
+	ln -s /Users/you/yogi-alloy/bin/yogi-alloy.js /usr/local/bin/yogi-alloy.js
+
+## Usage
 
 	yogi alloy [command]
 
@@ -25,10 +35,6 @@ Finds all CSS files in the current directory (non-recursively) and namespace the
 
 Basic usage:
 
-`.bar {}`
-
 	yogi alloy --namespace-css foo
 
-Result:
-
-`.foo-bar {}`
+Turns `.bar {}` into `.foo-bar {}`.
