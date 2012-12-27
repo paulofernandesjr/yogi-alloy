@@ -8,148 +8,132 @@
 * @author Eduardo Lundgren <eduardo.lundgren@liferay.com>
 */
 
-(function() {
+// -- Yogi Alloy Header --------------------------------------------------------
+var YOGI_PATH = process.env.YOGI_PATH,
+    YOGI_ALLOY_PATH = __dirname + '/../';
 
-    var argv = require('optimist').argv,
-        path = require('path'),
+var path = require('path');
 
-        YOGI_PATH = process.env.YOGI_PATH,
-        YOGI_ALLOY_PATH = __dirname + '/../';
+function requireAlloy(p) {
+    return require(path.join(YOGI_ALLOY_PATH, p));
+}
 
-    if (!YOGI_PATH) {
-        console.log('This should be executed from yogi');
-        process.exit(1);
-    }
+function requireYogi(p) {
+    return require(path.join(YOGI_PATH, p));
+}
 
-    var requireAlloy = function(p) {
-            return require(path.join(YOGI_ALLOY_PATH, p));
-        },
+// -- CLI ----------------------------------------------------------------------
+if (!YOGI_PATH) {
+    console.log('This should be executed from yogi');
+    process.exit(1);
+}
 
-        requireYogi = function(p) {
-            return require(path.join(YOGI_PATH, p));
-        },
+// -- Requires -----------------------------------------------------------------
+var argv = require('optimist').argv,
+    compass = requireAlloy('lib/compass'),
+    file = requireAlloy('lib/file'),
+    git = requireYogi('lib/git'),
+    log = requireYogi('lib/log'),
+    util = requireYogi('lib/util');
 
-        compass = requireAlloy('lib/compass'),
-        file = requireAlloy('lib/file'),
+// -- Commands -----------------------------------------------------------------
+var Alloy = {
+    REGEX_CSS_COMMENTS: /((?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:\/\/.*))/g,
+    REGEX_CSS_CLASSES: /([^0-9])\./g,
+    REGEX_CSS_EXTENSION: /\.css$/i,
+    TWITTER_BOOTSTRAP: 'alloy-twitter-bootstrap',
 
-        git = requireYogi('lib/git'),
-        log = requireYogi('lib/log'),
-        util = requireYogi('lib/util');
+    doCompileCss: function(payload, parsed) {
+        var instance = this;
 
-    var Alloy = {
+        if (instance._isTwitterBootstrapFolder()) {
+            compass.run('compile', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
+            compass.run('compile',[ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
+        }
+    },
 
-        REGEX_CSS_COMMENTS: /((?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:\/\/.*))/g,
-        REGEX_CSS_CLASSES: /([^0-9])\./g,
-        REGEX_CSS_EXTENSION: /\.css$/i,
-        TWITTER_BOOTSTRAP: 'alloy-twitter-bootstrap',
+    doNamespaceCss: function(payload, parsed) {
+        var instance = this,
+            root = git.findRoot() + '/../',
+            files;
 
-        /*
-        * YOGI Alloy Commands
-        */
-        doCompileCss: function(payload, parsed) {
-            var instance = this;
+        if (typeof payload !== "string") {
+            log.bail(util.bad + ' You must specify a namespace.');
+            process.exit(1);
+        }
 
-            if (instance._isTwitterBootstrapFolder()) {
-                compass.run('compile', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
-                compass.run('compile', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
-            }
-        },
+        if (instance._isTwitterBootstrapFolder()) {
+            files = file.find(root, instance.REGEX_CSS_EXTENSION);
 
-        doNamespaceCss: function(payload, parsed) {
-            var instance = this,
-                root = git.findRoot() + '/../',
-                files;
+            files.forEach(function(filename) {
+                var filepath = root + filename,
+                    comments = [],
+                    commentsIndex = 0;
 
-            if (typeof payload !== "string") {
-                log.bail(util.bad + ' You must specify a namespace.');
-                process.exit(1);
-            }
-
-            if (instance._isTwitterBootstrapFolder()) {
-                files = file.find(root, instance.REGEX_CSS_EXTENSION);
-
-                files.forEach(function(filename) {
-                    var filepath = root + filename,
-                        comments = [],
-                        commentsIndex = 0;
-
-                    file.replaceRegex(filepath, instance.REGEX_CSS_COMMENTS, function(match) {
-                        comments.push(match);
-                        return '@' + (commentsIndex++) + '@';
-                    });
-
-                    file.replaceRegex(filepath, instance.REGEX_CSS_CLASSES, "$1." + payload + "-");
-                    file.replaceTokens(filepath, comments);
+                file.replaceRegex(filepath, instance.REGEX_CSS_COMMENTS, function(match) {
+                    comments.push(match);
+                    return '@' + (commentsIndex++) + '@';
                 });
 
-                log.info(util.good + ' file(s): ' + files.join(', '));
-            }
-        },
-
-        doWatchCss: function(payload, parsed) {
-            var instance = this;
-
-            if (instance._isTwitterBootstrapFolder()) {
-                compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
-                compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
-            }
-        },
-        /*
-        * End of commands
-        */
-
-        _isReservedArg: function(word) {
-            var reserved = {
-                '$0': 1,
-                '_': 1
-            };
-
-            return reserved.hasOwnProperty(word);
-        },
-
-        _isTwitterBootstrapFolder: function() {
-            var instance = this,
-                origin = git.origin();
-
-            if (origin.indexOf(instance.TWITTER_BOOTSTRAP) > -1) {
-                return true;
-            }
-
-            log.bail(util.bad + ' You must be inside ' + instance.TWITTER_BOOTSTRAP + ' repo for this to work!');
-
-            return false;
-        },
-
-        _toPascalCase: function(str) {
-            return str.replace(/\w+/g, function(m) {
-                return m[0].toUpperCase() + m.slice(1).toLowerCase();
+                file.replaceRegex(filepath, instance.REGEX_CSS_CLASSES, "$1." + payload + "-");
+                file.replaceTokens(filepath, comments);
             });
+
+            log.info(util.good + ' file(s): ' + files.join(', '));
         }
-    };
+    },
 
-    /*
-    * Available commands:
-    *
-    * yogi alloy --compile-css
-    * yogi alloy --watch-css
-    * yogi alloy --namespace-css
-    */
-    Object.keys(argv).forEach(function(action) {
+    doWatchCss: function(payload, parsed) {
+        var instance = this;
 
-        if (!Alloy._isReservedArg(action)) {
-            var payload = argv[action],
-                methodName = 'do' + Alloy._toPascalCase(action).replace('-', '');
+        if (instance._isTwitterBootstrapFolder()) {
+            compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
+            compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
+        }
+    },
 
-            if (Alloy[methodName]) {
-                log.info(util.good + ' Running ' + action);
+    _isReservedArg: function(word) {
+        var reserved = {
+            '$0': 1,
+            '_': 1
+        };
 
-                Alloy[methodName].call(Alloy, payload, argv);
-            }
-            else {
-                log.bail(util.bad + ' Ops, ' + action + ' is not recognized as a valid action');
-            }
+        return reserved.hasOwnProperty(word);
+    },
+
+    _isTwitterBootstrapFolder: function() {
+        var instance = this,
+            origin = git.origin();
+
+        if (origin.indexOf(instance.TWITTER_BOOTSTRAP) > -1) {
+            return true;
         }
 
-    });
+        log.bail(util.bad + ' You must be inside ' + instance.TWITTER_BOOTSTRAP + ' repo for this to work!');
 
-}());
+        return false;
+    },
+
+    _toPascalCase: function(str) {
+        return str.replace(/\w+/g, function(m) {
+            return m[0].toUpperCase() + m.slice(1).toLowerCase();
+        });
+    }
+};
+
+// -- Initializer --------------------------------------------------------------
+Object.keys(argv).forEach(function(action) {
+    if (!Alloy._isReservedArg(action)) {
+        var payload = argv[action],
+            methodName = 'do' + Alloy._toPascalCase(action).replace('-', '');
+
+        if (Alloy[methodName]) {
+            log.info(util.good + ' Running ' + action);
+
+            Alloy[methodName].call(Alloy, payload, argv);
+        }
+        else {
+            log.bail(util.bad + ' Ops, ' + action + ' is not recognized as a valid action');
+        }
+    }
+});

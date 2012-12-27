@@ -27,7 +27,7 @@ Basic usage:
 
 `.bar {}`
 
-	yogi alloy -namespace-css bar
+	yogi alloy --namespace-css foo
 
 Result:
 
