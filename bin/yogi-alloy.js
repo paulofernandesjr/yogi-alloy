@@ -42,6 +42,7 @@ var Alloy = {
     REGEX_CSS_CLASSES: /([^0-9])\./g,
     REGEX_CSS_EXTENSION: /\.css$/i,
     TWITTER_BOOTSTRAP: 'alloy-twitter-bootstrap',
+    ALLOY_WEBSITE: 'alloyui.com',
 
     doCompileCss: function(payload, parsed) {
         var instance = this;
@@ -89,6 +90,14 @@ var Alloy = {
         if (instance._isFolder(instance.TWITTER_BOOTSTRAP)) {
             compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ]);
             compass.run('watch', [ 'lib/bootstrap.scss', 'lib/responsive.scss' ], { 'output-style': 'compressed' });
+        }
+    },
+
+    doRunSite: function(payload, parsed) {
+        var instance = this;
+
+        if (instance._isFolder(instance.ALLOY_WEBSITE)) {
+            log.info('it worked!');
         }
     },
 
