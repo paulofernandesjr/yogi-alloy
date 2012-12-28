@@ -10,6 +10,13 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 	npm -g install yogi yogi-alloy
 
+## Dependencies
+
+In order to sucessfully run all yogi alloy commands you must have the following dependencies installed:
+
+1. [Node.js](http://nodejs.org)
+2. [Compass](compass-style.org)
+
 ## Available commands:
 
 ### 1) Alloy Twitter Bootstrap
