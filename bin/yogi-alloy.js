@@ -98,13 +98,11 @@ var Alloy = {
         var instance = this;
 
         if (instance._isRepo(instance.ALLOY_WEBSITE)) {
-
             if (!file.hasFolder('node_modules')) {
                 docpad.install();
             } else {
                 docpad.run();
             }
-
         }
     },
 
