@@ -14,8 +14,8 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 In order to sucessfully run all yogi alloy commands you must have the following dependencies installed:
 
-1. [Node.js](http://nodejs.org)
-2. [Compass](compass-style.org)
+1. [Node.js](http://nodejs.org/download/)
+2. [Compass](http://compass-style.org/install/)
 
 ## Available commands:
 
