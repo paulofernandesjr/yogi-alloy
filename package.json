@@ -1,10 +1,20 @@
 {
     "name": "yogi-alloy",
     "description": "This project provides common AlloyUI tasks for yogi command line tool.",
-    "author": "Eduardo Lundgren <eduardo.lundgren@liferay.com>",
     "version": "0.0.1",
+    "author": {
+        "name": "Eduardo Lundgren",
+        "email": "eduardo.lundgren@liferay.com",
+        "web": "http://www.eduardolundgren.com",
+        "twitter": "eduardolundgren"
+    },
+    "license": "BSD",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:eduardolundgren/yogi-alloy.git"
+    },
     "keywords": [
-        "yogi", "alloy", "external", "commands", "helpers"
+        "yogi", "alloy", "yui", "external", "commands", "helpers"
     ],
     "bin": {
         "yogi-alloy": "./bin/yogi-alloy.js"
@@ -13,5 +23,6 @@
         "command": "*",
         "optimist": "*"
     },
+    "engines": { "node": "*" },
     "preferGlobal": "true"
 }
