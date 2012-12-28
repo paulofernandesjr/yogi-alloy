@@ -42,3 +42,11 @@ Turns `.bar {}` into `.foo-bar {}`.
 Provides a command to run the [alloyui.com](http://github.com/liferay/alloyui.com) website locally.
 
 	yogi alloy --run-site
+
+## Contributing:
+
+Contribute new tasks to yogi-alloy is really easy:
+
+1. Copy the contents of the `hello` command located at [hello.js](https://github.com/eduardolundgren/yogi-alloy/blob/master/lib/cmds/hello.js) into `lib/cmds/my-command.js`.
+2. Send a pull request with your new command.
+3. If the pull gets approved, it will be available in the next version under [npm](https://npmjs.org/package/yogi-alloy).
