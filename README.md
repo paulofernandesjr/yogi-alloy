@@ -17,11 +17,13 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://github.com/eduardolundgren/alloy-twitter-bootstrap) project.
 
-`yogi alloy --compile-css`
 Compile SASS files to CSS.
 
-`yogi alloy --watch-css`
+	yogi alloy --compile-css
+
 Watch changes on SASS files and build them.
+
+	yogi alloy --watch-css
 
 ### 2) Namespace
 
@@ -29,7 +31,9 @@ Finds all CSS files in the current directory (non-recursively) and namespace the
 
 	yogi alloy --namespace-css [yourNamespace]
 
-For example: `yogi alloy --namespace-css foo`
+For example:
+	
+	yogi alloy --namespace-css foo
 
 Turns `.bar {}` into `.foo-bar {}`.
 
