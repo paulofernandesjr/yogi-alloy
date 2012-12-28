@@ -8,8 +8,7 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 ## Install
 
-	npm -g install yogi
-	npm -g install yogi-alloy
+	npm -g install yogi yogi-alloy
 
 ## Available commands:
 
@@ -48,8 +47,8 @@ Provides a command to run the [alloyui.com](http://github.com/liferay/alloyui.co
 Contribute new tasks to yogi-alloy is really easy:
 
 1. [Install Yogi Alloy](https://github.com/eduardolundgren/yogi-alloy#install), if you haven't done it yet.
-1. Fork and clone [yogi-alloy](http://github.com/eduardolundgren/yogi-alloy).
-2. Replace it with your cloned version, to do that follow the next steps:
+2. Fork and clone [yogi-alloy](http://github.com/eduardolundgren/yogi-alloy).
+3. Replace it with your cloned version, to do that follow the next steps:
 
 	a. Move the old symbolic link form your way:
 
@@ -59,9 +58,9 @@ Contribute new tasks to yogi-alloy is really easy:
 
 		ln -s /Users/you/yogi-alloy/bin/yogi-alloy.js /usr/local/bin/yogi-alloy
 
-3. Copy the contents of the `hello` command located at [hello.js](https://github.com/eduardolundgren/yogi-alloy/blob/master/lib/cmds/hello.js) into `lib/cmds/my-command.js`.
-4. Send a pull request with your new command.
-5. If the pull gets approved, it will be available in the next version under [npm](https://npmjs.org/package/yogi-alloy).
-6. Run your command:
+4. Copy the contents of the `hello` command located at [hello.js](https://github.com/eduardolundgren/yogi-alloy/blob/master/lib/cmds/hello.js) into `lib/cmds/my-command.js`.
+5. Send a pull request with your new command.
+6. If the pull gets approved, it will be available in the next version under [npm](https://npmjs.org/package/yogi-alloy).
+7. Run your command:
 
-	yogi alloy --my-command
+		yogi alloy --my-command
