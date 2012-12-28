@@ -16,6 +16,7 @@ In order to sucessfully run all yogi alloy commands you must have the following 
 
 1. [Node.js](http://nodejs.org/download/)
 2. [Compass](http://compass-style.org/install/)
+3. [DocPad](http://bevry.me/learn/docpad-install)
 
 ## Available commands:
 
