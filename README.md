@@ -66,8 +66,11 @@ Contribute new tasks to yogi-alloy is really easy:
 
 		ln -s /Users/you/yogi-alloy/bin/yogi-alloy.js /usr/local/bin/yogi-alloy
 
-4. Copy the contents of the `hello` command located at [hello.js](https://github.com/eduardolundgren/yogi-alloy/blob/master/lib/cmds/hello.js) into `lib/cmds/my-command.js`.
-5. Send a pull request with your new command.
+4. In your clone, copy the contents of the `hello` command to `my-command`:
+
+		cp -R lib/cmds/hello.js lib/cmds/my-command.js
+
+5. Start working on it and when you finish, just send a pull request with your new command.
 6. If the pull gets approved, it will be available in the next version under [npm](https://npmjs.org/package/yogi-alloy).
 7. Run your command:
 
