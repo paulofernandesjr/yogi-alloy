@@ -12,9 +12,7 @@
 var YOGI_PATH = process.env.YOGI_PATH,
     YOGI_ALLOY_PATH = __dirname + '/../';
 
-// -- Global Requires --------------------------------------------------------
-var path = require('path'),
-    spawn = require('child_process').spawn;
+var path = require('path');
 
 function requireAlloy(p) {
     return require(path.join(YOGI_ALLOY_PATH, p));
@@ -33,6 +31,7 @@ if (!YOGI_PATH) {
 // -- Requires -----------------------------------------------------------------
 var argv = require('optimist').argv,
     compass = requireAlloy('lib/compass'),
+    docpad = requireAlloy('lib/docpad'),
     file = requireAlloy('lib/file'),
     git = requireYogi('lib/git'),
     log = requireYogi('lib/log'),
@@ -101,35 +100,12 @@ var Alloy = {
         if (instance._isRepo(instance.ALLOY_WEBSITE)) {
 
             if (!file.hasFolder('node_modules')) {
-                instance._installDocpad();
+                docpad.install();
             } else {
-                instance._runDocpad();
+                docpad.run();
             }
 
         }
-    },
-
-    _installDocpad: function() {
-        var instance = this,
-            docpadInstall = spawn('docpad', ['install', '.']);
-
-        docpadInstall.stdout.on('data', function (data) {
-            log.info(data);
-        });
-
-        docpadInstall.on('exit', function (code) {
-            if (code == 0) {
-                instance._runDocpad();
-            }
-        });
-    },
-
-    _runDocpad: function() {
-        var docpadRun = spawn('docpad', ['run', '.']);
-
-        docpadRun.stdout.on('data', function (data) {
-            log.info(data);
-        });
     },
 
     _isReservedArg: function(word) {
