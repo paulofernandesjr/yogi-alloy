@@ -32,7 +32,7 @@ Finds all CSS files in the current directory (non-recursively) and namespace the
 	yogi alloy --namespace-css [yourNamespace]
 
 For example:
-	
+
 	yogi alloy --namespace-css foo
 
 Turns `.bar {}` into `.foo-bar {}`.
