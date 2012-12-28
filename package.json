@@ -1,7 +1,7 @@
 {
     "name": "yogi-alloy",
     "description": "This project provides common AlloyUI tasks for yogi command line tool.",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "author": {
         "name": "Eduardo Lundgren",
         "email": "eduardo.lundgren@liferay.com",
