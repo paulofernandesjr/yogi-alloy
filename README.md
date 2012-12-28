@@ -47,8 +47,9 @@ Provides a command to run the [alloyui.com](http://github.com/liferay/alloyui.co
 
 Contribute new tasks to yogi-alloy is really easy:
 
+1. [Install Yogi Alloy](https://github.com/eduardolundgren/yogi-alloy#install), if you haven't done it yet.
 1. Fork and clone [yogi-alloy](http://github.com/eduardolundgren/yogi-alloy).
-2. If you have the npm version installed, you need to replace it with your cloned version, to do that follow the next steps:
+2. Replace it with your cloned version, to do that follow the next steps:
 
 	a. Move the old symbolic link form your way:
 
