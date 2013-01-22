@@ -15,10 +15,10 @@ var YOGI_PATH = process.env.YOGI_PATH,
 var base = require(YOGI_ALLOY_PATH + '/lib/base');
 
 // -- Requires -----------------------------------------------------------------
-var argv = require('optimist').argv,
+var optimist = require('optimist'),
+    argv = optimist.usage('Usage: yogi alloy -[hcnw]', base.OPTIONS).argv,
     file = base.requireAlloy('lib/file'),
-    log = base.requireYogi('lib/log'),
-    util = base.requireYogi('lib/util');
+    log = require("cli-log").init({ prefix: 'yogi' });
 
 // -- CLI ----------------------------------------------------------------------
 if (!YOGI_PATH) {
@@ -26,16 +26,23 @@ if (!YOGI_PATH) {
     process.exit(1);
 }
 
-Object.keys(argv).forEach(function(action) {
-    if (!base.isReservedArg(action)) {
-        var payload = argv[action],
-            filepath = YOGI_ALLOY_PATH + '/lib/cmds/' + action + '.js';
+var options = Object.keys(argv);
+
+if (argv.help || options.length < 4) {
+    optimist.showHelp();
+    process.exit(0);
+}
+
+options.forEach(function(option) {
+    if (base.isOption(option)) {
+        var payload = argv[option],
+            filepath = YOGI_ALLOY_PATH + '/lib/cmds/' + option + '.js';
 
         if (file.exists(filepath)) {
             require(filepath).run(payload, argv);
         }
-        else {
-            log.bail(util.bad + ' Ops, ' + action + ' is not recognized as a valid action');
-        }
+    }
+    else if (!base.isReservedArg(option)) {
+        log.oops(option + ' is not recognized as a valid option');
     }
 });
