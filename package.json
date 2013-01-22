@@ -20,7 +20,9 @@
         "yogi-alloy": "./bin/yogi-alloy.js"
     },
     "dependencies": {
+        "async": "*",
         "cli-log": "*",
+        "cli-prompt": "*",
         "command": "*",
         "optimist": "*"
     },
