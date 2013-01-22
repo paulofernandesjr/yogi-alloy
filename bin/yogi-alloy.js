@@ -18,7 +18,7 @@ var base = require(YOGI_ALLOY_PATH + '/lib/base');
 var optimist = require('optimist'),
     argv = optimist.usage('Usage: yogi alloy -[hcnw]', base.OPTIONS).argv,
     file = base.requireAlloy('lib/file'),
-    log = require("cli-log").init({ prefix: 'yogi' });
+    log = require("cli-log").init({ prefix: 'yogi', prefixColor: 'magenta' });
 
 // -- CLI ----------------------------------------------------------------------
 if (!YOGI_PATH) {
