@@ -28,7 +28,7 @@ if (!YOGI_PATH) {
 
 var options = Object.keys(argv);
 
-if (argv.help || options.length < 4) {
+if (argv.help || options.length < 3) {
     optimist.showHelp();
     process.exit(0);
 }
