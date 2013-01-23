@@ -23,6 +23,7 @@
         "async": "*",
         "cli-log": "*",
         "cli-prompt": "*",
+        "dank-copyfile": "*",
         "command": "*",
         "optimist": "*"
     },
