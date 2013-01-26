@@ -23,8 +23,8 @@
         "async": "*",
         "cli-log": "*",
         "cli-prompt": "*",
-        "dank-copyfile": "*",
         "command": "*",
+        "fs-extra": "*",
         "optimist": "*"
     },
     "engines": { "node": "*" },
