@@ -11,7 +11,7 @@
     "license": "BSD",
     "repository": {
         "type": "git",
-        "url": "git@github.com:eduardolundgren/yogi-alloy.git"
+        "url": "git@github.com:liferay/yogi-alloy.git"
     },
     "keywords": [
         "yogi", "alloy", "yui", "external", "commands", "helpers"
