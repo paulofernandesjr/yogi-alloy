@@ -20,7 +20,18 @@ In order to sucessfully run all yogi alloy commands you must have the following 
 
 ## Available commands:
 
-### 1) Alloy Twitter Bootstrap
+### 1) AlloyUI
+
+Provides a set of util commands to work with [AlloyUI](http://github.com/liferay/alloy-ui) project.
+
+Checkout [AlloyUI](https://github.com/liferay/alloy-ui) source code and run the command below to initialize the project and its dependencies. This will generate the `build` folder containting YUI and AlloyUI modules.
+
+	yogi alloy --init
+	
+
+![yogi alloy --init](http://f.cl.ly/items/2M2z452Q1O140Z2d1i0I/Screen%20Shot%202013-02-04%20at%2020.43.34.png)
+
+### 2) Alloy Twitter Bootstrap
 
 Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://github.com/eduardolundgren/alloy-twitter-bootstrap) project.
 
@@ -32,7 +43,7 @@ Watch changes on SASS files and build them.
 
 	yogi alloy --watch-css
 
-### 2) Namespace
+### 3) Namespace
 
 Finds all CSS files in the current directory (non-recursively) and namespace them.
 
@@ -44,7 +55,7 @@ For example:
 
 Turns `.bar {}` into `.foo-bar {}`.
 
-### 3) Website
+### 4) Website
 
 Provides a command to run the [alloyui.com](http://github.com/liferay/alloyui.com) website locally.
 
