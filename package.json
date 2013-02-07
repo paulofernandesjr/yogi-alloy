@@ -25,7 +25,9 @@
         "cli-prompt": "*",
         "command": "*",
         "fs-extra": "*",
-        "optimist": "*"
+        "optimist": "*",
+        "walkdir": "*",
+        "zip-archiver": "*"
     },
     "engines": { "node": "*" },
     "preferGlobal": "true"
