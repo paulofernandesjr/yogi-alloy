@@ -18,7 +18,7 @@ In order to sucessfully run all yogi alloy commands you must have the following 
 2. [Compass](http://compass-style.org/install/)
 3. [DocPad](http://bevry.me/learn/docpad-install)
 
-## Available commands:
+## Available commands
 
 ### 1) AlloyUI
 
@@ -33,7 +33,7 @@ Checkout [AlloyUI](https://github.com/liferay/alloy-ui) source code and run the 
 
 ### 2) Alloy Twitter Bootstrap
 
-Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://github.com/eduardolundgren/alloy-twitter-bootstrap) project.
+Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://github.com/liferay/alloy-twitter-bootstrap) project.
 
 Compile SASS files to CSS.
 
@@ -61,12 +61,12 @@ Provides a command to run the [alloyui.com](http://github.com/liferay/alloyui.co
 
 	yogi alloy --run-site
 
-## Contributing:
+## Contributing
 
 Contribute new tasks to yogi-alloy is really easy:
 
-1. [Install Yogi Alloy](https://github.com/eduardolundgren/yogi-alloy#install), if you haven't done it yet.
-2. Fork and clone [yogi-alloy](http://github.com/eduardolundgren/yogi-alloy).
+1. [Install Yogi Alloy](#install), if you haven't done it yet.
+2. Fork and clone [yogi-alloy](http://github.com/liferay/yogi-alloy).
 3. Replace it with your cloned version, to do that follow the next steps:
 
 	a. Move the old symbolic link form your way:
