@@ -27,7 +27,8 @@
         "fs-extra": "*",
         "optimist": "*",
         "walkdir": "*",
-        "zip-archiver": "*"
+        "zip-archiver": "*",
+        "which": "*"
     },
     "engines": { "node": "*" },
     "preferGlobal": "true"
