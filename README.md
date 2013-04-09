@@ -82,6 +82,16 @@ yogi alloy --site-watch
 yogi alloy --site-deploy
 	```
 
+### API Docs
+
+Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui.com/api/).
+
+* Run the API Docs locally and watch for any changes.
+
+	```
+yogi alloy --api-watch
+	```
+
 ## Contributing
 
 Contribute new tasks to yogi-alloy is really easy:
