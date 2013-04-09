@@ -84,10 +84,10 @@ yogi alloy --site-deploy
 
 ## Contributing
 
-Contribute new tasks to yogi-alloy is really easy:
+Contribute new tasks to yogi alloy is really easy:
 
-1. [Install Yogi Alloy](#install), if you haven't done it yet.
-2. Fork and clone [yogi-alloy](http://github.com/liferay/yogi-alloy).
+1. [Install yogi alloy](#install) and its [dependencies](#dependencies), if you haven't done it yet.
+2. Fork and clone [yogi alloy](http://github.com/liferay/yogi-alloy).
 3. Replace it with your cloned version, to do that follow the next steps:
 
 	a) Move the old symbolic link form your way:
@@ -96,12 +96,13 @@ Contribute new tasks to yogi-alloy is really easy:
 mv /usr/local/bin/yogi-alloy /usr/local/bin/yogi-alloy-npm
 	```
 
-	b) Create a symbolic link for your cloned version of `yogi-alloy.js`, for example:
-
+	b) Create a symbolic link for your cloned version.
+	
 	```
 ln -s /Users/you/yogi-alloy/bin/yogi-alloy.js /usr/local/bin/yogi-alloy
 	```
-
+	> **Note:** Remember to change "you" to your own username.
+	
 4. In your clone, copy the contents of the `hello` command to `my-command`:
 
 	```
@@ -115,3 +116,5 @@ cp -R lib/cmds/hello.js lib/cmds/my-command.js
 	```
 yogi alloy --my-command
 	```
+	
+> **Note:** These instructions works on unix-based systems. If you're on Windows, [check instructions here](https://github.com/liferay/yogi-alloy/wiki/Contributing-(Windows)).
