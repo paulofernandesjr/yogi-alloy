@@ -84,7 +84,9 @@ yogi alloy --site-deploy
 
 ### API Docs
 
-Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui.com/api/).
+Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui.com/api/). 
+
+Before running any of those tasks you need to install [YUIDoc](http://yui.github.io/yuidoc/) globally: `npm install -g yuidocjs`
 
 * Run the API Docs locally and watch for any changes.
 
