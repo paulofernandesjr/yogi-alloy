@@ -93,6 +93,14 @@ Before running any of those tasks you need to install [YUIDoc](http://yui.github
 	```
 yogi alloy --api-watch
 	```
+	Go to `http://localhost:3000` to see it.
+	
+* Build the API Docs locally.
+
+	```
+yogi alloy --api-build
+	```
+	This command will create a `api` folder containing all generated files. You can also set a specific folder instead of api by running `yogi alloy --api-build myFolder`.
 
 ## Contributing
 
