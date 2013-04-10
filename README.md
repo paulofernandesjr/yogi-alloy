@@ -100,7 +100,7 @@ yogi alloy --api-watch
 	```
 yogi alloy --api-build
 	```
-	This command will create a `api` folder containing all generated files. You can also set a specific folder instead of api by running `yogi alloy --api-build myFolder`.
+	This command will scan all JavaScript files inside of your current folder to generate a documentation on `api` folder. You can also set a specific source/destination folder by answering command's questions.
 
 ## Contributing
 
