@@ -82,6 +82,26 @@ yogi alloy --site-watch
 yogi alloy --site-deploy
 	```
 
+### API Docs
+
+Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui.com/api/). 
+
+Before running any of those tasks you need to install [YUIDoc](http://yui.github.io/yuidoc/) globally: `npm install -g yuidocjs`
+
+* Run the API Docs locally and watch for any changes.
+
+	```
+yogi alloy --api-watch
+	```
+	Go to `http://localhost:3000` to see it.
+	
+* Build the API Docs locally.
+
+	```
+yogi alloy --api-build
+	```
+	This command will scan all JavaScript files inside of your current folder to generate a documentation on `api` folder. You can also set a specific source/destination folder by answering command's questions.
+
 ## Contributing
 
 Contribute new tasks to yogi alloy is really easy:
