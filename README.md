@@ -81,6 +81,8 @@ yogi alloy --site-watch
 	```
 yogi alloy --site-deploy
 	```
+	
+	In order to see your changes live at http://alloyui.com you'll need a git remote pointing to liferay's repository. You can do that by running `git remote add upstream git@github.com:liferay/alloyui.com.git`. Then, when you get asked about what remote do you want to deploy, just answer `upstream`.
 
 ### API Docs
 
