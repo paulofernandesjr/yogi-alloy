@@ -28,8 +28,8 @@
         "fs-extra": "*",
         "nopt": "*",
         "walkdir": "*",
-        "zip-archiver": "*",
-        "which": "*"
+        "which": "*",
+        "zip-archiver": "*"
     },
     "engines": { "node": "*" },
     "preferGlobal": "true"
