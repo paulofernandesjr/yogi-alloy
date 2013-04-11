@@ -17,6 +17,7 @@
         "yogi", "alloy", "yui", "external", "commands", "helpers"
     ],
     "bin": {
+        "ya": "./bin/ya.js",
         "yogi-alloy": "./bin/yogi-alloy.js"
     },
     "dependencies": {
