@@ -10,4 +10,4 @@ argv.splice(0, 2);
 command.open()
     .on('stdout', command.writeTo(process.stdout))
     .on('stderr', command.writeTo(process.stderr))
-    .exec(which('yogi'), args);
+    .exec(which('yogi'), argv);
