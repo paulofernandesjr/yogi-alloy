@@ -1,10 +1,12 @@
 # yogi alloy
 
+![Pixel Alloy](http://cl.ly/image/110y3s2w2n1l/yogi.jpg)
+
 This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi) command line tool.
 
 ## Usage
 
-	ya [command]
+	ya [command] [--flags]
 
 ## Install
 
@@ -20,6 +22,10 @@ In order to sucessfully run all yogi alloy commands you must have the following 
 
 ## Available commands
 
+```
+ya help
+```
+
 ### AlloyUI
 
 Provides a set of util commands to work with [AlloyUI](http://github.com/liferay/alloy-ui) project.
@@ -27,25 +33,25 @@ Provides a set of util commands to work with [AlloyUI](http://github.com/liferay
 * Checkout [AlloyUI](https://github.com/liferay/alloy-ui) source code and run the command below to initialize the project and its dependencies. This will generate the `build` folder containting YUI and AlloyUI modules.
 
 	```
-ya --init
+ya init
 	```
 
-* Build components guessing what do build [js, css, js fast].
+* Build components guessing what do build.
 
 	```
-ya --build
+ya build [--js, --css, --fast]
 	```
 
 * Release a new version.
 
 	```
-ya --release
+ya release
 	```
 
 * Finds all CSS files in the current directory and namespace them. For example:
 
 	```
-ya --namespace-css foo
+ya css-namespace --prefix foo
 	```
 
 	Turns `.bar {}` into `.foo-bar {}`.
@@ -57,13 +63,13 @@ Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://gi
 * Compile SASS files to CSS.
 
 	```
-ya --compile-css
+ya css-compile
 	```
 
 * Watch changes on SASS files and build them.
 
 	```
-ya --watch-css
+ya css-watch
 	```
 
 ### AlloyUI.com
@@ -73,13 +79,13 @@ Provides a set of util commands to work with [AlloyUI.com](http://github.com/lif
 * Run the website locally and watch for any changes.
 
 	```
-ya --site-watch
+ya site-watch
 	```
 
 * Deploy the website to alloyui.com.
 
 	```
-ya --site-deploy
+ya site-deploy
 	```
 	
 	In order to see your changes live at http://alloyui.com you'll need a git remote pointing to liferay's repository. You can do that by running `git remote add upstream git@github.com:liferay/alloyui.com.git`. Then, when you get asked about what remote do you want to deploy, just answer `upstream`.
@@ -93,14 +99,14 @@ Before running any of those tasks you need to install [YUIDoc](http://yui.github
 * Run the API Docs locally and watch for any changes.
 
 	```
-ya --api-watch
+ya api-watch
 	```
 	Go to `http://localhost:3000` to see it.
 	
 * Build the API Docs locally.
 
 	```
-ya --api-build
+ya api-build
 	```
 	This command will scan all JavaScript files inside of your current folder to generate a documentation on `api` folder. You can also set a specific source/destination folder by answering command's questions.
 
@@ -136,7 +142,7 @@ cp -R lib/cmds/hello.js lib/cmds/my-command.js
 7. Run your command:
 
 	```
-ya --my-command
+ya my-command
 	```
 	
 > **Note:** These instructions works on unix-based systems. If you're on Windows, [check instructions here](https://github.com/liferay/yogi-alloy/wiki/Contributing-(Windows)).
