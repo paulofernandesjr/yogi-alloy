@@ -14,35 +14,32 @@ var YOGI_PATH = process.env.YOGI_PATH,
 
 var base = require(YOGI_ALLOY_PATH + '/lib/base');
 
-// -- Requires -----------------------------------------------------------------
-var optimist = require('optimist'),
-    argv = optimist.usage('Usage: yogi alloy -[hcnw]', base.OPTIONS).argv,
-    file = base.requireAlloy('lib/file'),
-    log = require("cli-log").init({ prefix: 'yogi', prefixColor: 'magenta' });
-
 // -- CLI ----------------------------------------------------------------------
 if (!YOGI_PATH) {
     console.log('This should be executed from yogi');
     process.exit(1);
 }
 
-var options = Object.keys(argv);
+var file = base.requireAlloy('lib/file'),
+    log = require("cli-log").init({ prefix: 'yogi', prefixColor: 'magenta' }),
+    nopt = require('nopt'),
+    parsed = nopt(process.argv),
+    remain = parsed.argv.remain;
 
-if (argv.help || options.length < 3) {
-    optimist.showHelp();
-    process.exit(0);
+if (!remain.length) {
+    log.oops('you should specify a command');
 }
 
-options.forEach(function(option) {
-    if (base.isOption(option)) {
-        var payload = argv[option],
-            filepath = YOGI_ALLOY_PATH + '/lib/cmds/' + option + '.js';
+var command = remain[0],
+    filepath = YOGI_ALLOY_PATH + 'lib/cmds/' + command + '.js';
 
-        if (file.exists(filepath)) {
-            require(filepath).run(payload, argv);
-        }
-    }
-    else if (!base.isReservedArg(option)) {
-        log.oops(option + ' is not recognized as a valid option');
-    }
-});
+if (file.exists(filepath)) {
+    var instance = require(filepath),
+        metadata = instance.COMMAND,
+        options = nopt(metadata.options, metadata.shorthands, process.argv, 2);
+
+    instance.run(options);
+}
+else {
+    log.oops('[' + command + '] command not found');
+}
