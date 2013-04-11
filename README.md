@@ -106,7 +106,7 @@ ya --api-build
 
 ## Contributing
 
-Contribute new tasks to ya is really easy:
+Contribute new tasks to yogi alloy is really easy:
 
 1. [Install yogi alloy](#install) and its [dependencies](#dependencies), if you haven't done it yet.
 2. Fork and clone [yogi alloy](http://github.com/liferay/yogi-alloy).
