@@ -12,7 +12,8 @@
 var YOGI_PATH = process.env.YOGI_PATH,
     YOGI_ALLOY_PATH = __dirname + '/../';
 
-var base = require(YOGI_ALLOY_PATH + '/lib/base');
+var base = require(YOGI_ALLOY_PATH + '/lib/base'),
+    helpCmd = require(YOGI_ALLOY_PATH + '/lib/cmds/help');
 
 // -- CLI ----------------------------------------------------------------------
 if (!YOGI_PATH) {
@@ -27,7 +28,8 @@ var file = base.requireAlloy('lib/file'),
     remain = parsed.argv.remain;
 
 if (!remain.length) {
-    log.oops('you should specify a command');
+    helpCmd.run();
+    process.exit(0);
 }
 
 var command = remain[0],
