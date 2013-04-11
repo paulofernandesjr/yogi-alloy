@@ -21,11 +21,12 @@
     },
     "dependencies": {
         "async": "*",
+        "cli-color": "*",
         "cli-log": "*",
         "cli-prompt": "*",
         "command": "*",
         "fs-extra": "*",
-        "optimist": "*",
+        "nopt": "*",
         "walkdir": "*",
         "zip-archiver": "*",
         "which": "*"
