@@ -42,11 +42,13 @@ ya init
 ya build [--js, --css, --fast]
 	```
 
-* Create a new module.
+* Create a new module. For example:
 
     ```
-ya create
+ya create --name foo
     ```
+
+Generates a `src/aui-foo` folder containing the module scaffolding.
 
 * Release a new version.
 
