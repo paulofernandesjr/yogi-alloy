@@ -10,7 +10,7 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 ## Install
 
-	npm -g install yogi yogi-alloy
+	npm -g install yogi yogi-alloy yuidocjs docpad
 
 ## Dependencies
 
@@ -18,7 +18,6 @@ In order to sucessfully run all yogi alloy commands you must have the following 
 
 1. [Node.js](http://nodejs.org/download/)
 2. [Compass](http://compass-style.org/install/)
-3. [DocPad](http://bevry.me/learn/docpad-install)
 
 ## Available commands
 
@@ -101,8 +100,6 @@ ya site-deploy
 ### API Docs
 
 Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui.com/api/). 
-
-Before running any of those tasks you need to install [YUIDoc](http://yui.github.io/yuidoc/) globally: `npm install -g yuidocjs`
 
 * Run the API Docs locally and watch for any changes.
 
