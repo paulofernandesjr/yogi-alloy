@@ -42,19 +42,17 @@ ya init
 ya build [--js, --css, --fast]
 	```
 
+* Create a new module.
+
+    ```
+ya create
+    ```
+
 * Release a new version.
 
 	```
 ya release
 	```
-
-* Finds all CSS files in the current directory and namespace them. For example:
-
-	```
-ya css-namespace --prefix foo
-	```
-
-	Turns `.bar {}` into `.foo-bar {}`.
 
 ### Alloy Twitter Bootstrap
 
@@ -71,6 +69,14 @@ ya css-compile
 	```
 ya css-watch
 	```
+
+* Finds all CSS files in the current directory and namespace them. For example:
+
+    ```
+ya css-namespace --prefix foo
+    ```
+
+    Turns `.bar {}` into `.foo-bar {}`.
 
 ### AlloyUI.com
 
