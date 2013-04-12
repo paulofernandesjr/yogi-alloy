@@ -29,7 +29,7 @@ ya help
 
 Provides a set of util commands to work with [AlloyUI](http://github.com/liferay/alloy-ui) project.
 
-* Checkout [AlloyUI](https://github.com/liferay/alloy-ui) source code and run the command below to initialize the project and its dependencies. This will generate the `build` folder containting YUI and AlloyUI modules.
+* Clone or update all dependencies. Also incorporate `ya build` task.
 
 	```
 ya init
@@ -40,6 +40,8 @@ ya init
 	```
 ya build [--js, --css, --fast]
 	```
+	
+	If you run this command inside of a component folder, e.g. `src/aui-audio`, it will build only that component on `build/aui-audio`. If you run this command inside of the root folder it will build all components on `build` folder.
 
 * Create a new module. For example:
 
@@ -47,13 +49,15 @@ ya build [--js, --css, --fast]
 ya create --name foo
     ```
 
-Generates a `src/aui-foo` folder containing the module scaffolding.
+	This will generate a `src/aui-foo` folder containing the module scaffolding.
 
 * Release a new version.
 
 	```
 ya release
 	```
+	
+	This will generate a ready-to-release version of AlloyUI inside of a .zip file.
 
 ### Alloy Twitter Bootstrap
 
