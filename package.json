@@ -1,7 +1,7 @@
 {
     "name": "yogi-alloy",
     "description": "This project provides common AlloyUI tasks for yogi command line tool.",
-    "version": "0.0.43",
+    "version": "0.0.44",
     "author": {
         "name": "Eduardo Lundgren",
         "email": "eduardo.lundgren@liferay.com",
@@ -25,7 +25,7 @@
         "cli-color": "*",
         "cli-log": "*",
         "cli-prompt": "*",
-        "command": "0.0.3",
+        "command": "0.0.3-5",
         "fs-extra": "*",
         "nopt": "*",
         "walkdir": "*",
