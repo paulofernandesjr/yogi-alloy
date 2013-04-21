@@ -40,7 +40,7 @@ ya init
 	```
 ya build [--js, --css, --fast]
 	```
-	
+
 	If you run this command inside of a component folder, e.g. `src/aui-audio`, it will build only that component on `build/aui-audio`. If you run this command inside of the root folder it will build all components on `build` folder.
 
 * Create a new module. For example:
@@ -56,7 +56,7 @@ ya create --name foo
 	```
 ya release
 	```
-	
+
 	This will generate a ready-to-release version of AlloyUI inside of a .zip file.
 
 ### Alloy Twitter Bootstrap
@@ -98,12 +98,12 @@ ya site-watch
 	```
 ya site-deploy
 	```
-	
+
 	In order to see your changes live at http://alloyui.com you'll need a git remote pointing to liferay's repository. You can do that by running `git remote add upstream git@github.com:liferay/alloyui.com.git`. Then, when you get asked about what remote do you want to deploy, just answer `upstream`.
 
 ### API Docs
 
-Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui.com/api/). 
+Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui.com/api/).
 
 * Run the API Docs locally and watch for any changes.
 
@@ -111,7 +111,7 @@ Provides a set of util commands to work with AlloyUI's [API Docs](http://alloyui
 ya api-watch
 	```
 	Go to `http://localhost:3000` to see it.
-	
+
 * Build the API Docs locally.
 
 	```
@@ -134,12 +134,12 @@ mv /usr/local/bin/yogi-alloy /usr/local/bin/yogi-alloy-npm
 	```
 
 	b) Create a symbolic link for your cloned version.
-	
+
 	```
 ln -s /Users/you/yogi-alloy/bin/yogi-alloy.js /usr/local/bin/yogi-alloy
 	```
 	> **Note:** Remember to change "you" to your own username.
-	
+
 4. In your clone, copy the contents of the `hello` command to `my-command`:
 
 	```
@@ -153,5 +153,5 @@ cp -R lib/cmds/hello.js lib/cmds/my-command.js
 	```
 ya my-command
 	```
-	
+
 > **Note:** These instructions works on unix-based systems. If you're on Windows, [check instructions here](https://github.com/liferay/yogi-alloy/wiki/Contributing-(Windows)).
