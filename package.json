@@ -21,16 +21,16 @@
         "yogi-alloy": "./bin/yogi-alloy.js"
     },
     "dependencies": {
-        "async": "*",
-        "cli-color": "*",
-        "cli-log": "*",
-        "cli-prompt": "*",
-        "command": "0.0.3-5",
-        "fs-extra": "*",
-        "nopt": "*",
-        "walkdir": "*",
-        "which": "*",
-        "zip-archiver": "*"
+        "async": "0.2.7",
+        "cli-color": "0.2.2",
+        "cli-log": "0.0.7",
+        "cli-prompt": "0.1.0",
+        "command": "0.0.4",
+        "fs-extra": "0.6.0",
+        "nopt": "2.1.1",
+        "walkdir": "0.0.5",
+        "which": "1.0.5",
+        "zip-archiver": "0.0.3"
     },
     "engines": { "node": "*" },
     "preferGlobal": "true"
