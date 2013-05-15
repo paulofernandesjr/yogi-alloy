@@ -10,7 +10,7 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 ## Install
 
-	npm -g install yogi yogi-alloy yuidocjs docpad
+	npm -g install yogi yogi-alloy yuidocjs docpad shifter
 
 ## Dependencies
 
