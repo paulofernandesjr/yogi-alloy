@@ -31,7 +31,7 @@
         "nopt": "2.1.1",
         "walkdir": "0.0.5",
         "which": "1.0.5",
-        "zip-archiver": "0.0.3"
+        "zip-archiver": "0.0.4"
     },
     "engines": {
         "node": "0.8"
