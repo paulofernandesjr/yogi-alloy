@@ -40,6 +40,7 @@ if (file.exists(filepath)) {
         metadata = instance.COMMAND,
         options = nopt(metadata.options, metadata.shorthands, process.argv, 2);
 
+    base.checkVersion();
     instance.run(options);
 }
 else {
