@@ -2,7 +2,8 @@
 
 ![Pixel Alloy](http://cl.ly/image/110y3s2w2n1l/yogi.jpg)
 
-This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi) command line tool.
+This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi)
+command line tool.
 
 ## Usage
 
@@ -10,7 +11,8 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 ## Dependencies
 
-In order to sucessfully run all yogi alloy commands you must have the following dependencies installed:
+In order to sucessfully run all yogi alloy commands you must have the following
+dependencies installed:
 
 1. [Node.js](http://nodejs.org/download/)
 2. [Compass](http://compass-style.org/install/)
@@ -27,7 +29,8 @@ ya help
 
 ### AlloyUI
 
-Provides a set of util commands to work with [AlloyUI](http://github.com/liferay/alloy-ui) project.
+Provides a set of util commands to work with [AlloyUI](http://github.com/liferay/alloy-ui)
+project.
 
 * Clone or update all dependencies. Also incorporate `ya build` task.
 
@@ -41,7 +44,9 @@ ya init
 ya build [--js, --css, --fast]
 	```
 
-	If you run this command inside of a component folder, e.g. `src/aui-audio`, it will build only that component on `build/aui-audio`. If you run this command inside of the root folder it will build all components on `build` folder.
+	If you run this command inside of a component folder, e.g. `src/aui-audio`,
+	it will build only that component on `build/aui-audio`. If you run this
+	command inside of the root folder it will build all components on `build` folder.
 
 * Create a new module. For example:
 
@@ -61,7 +66,8 @@ ya release
 
 ### Alloy Twitter Bootstrap
 
-Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://github.com/liferay/alloy-twitter-bootstrap) project.
+Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://github.com/liferay/alloy-twitter-bootstrap)
+project.
 
 * Compile SASS files to CSS.
 
@@ -83,9 +89,18 @@ ya css-namespace --prefix foo
 
     Turns `.bar {}` into `.foo-bar {}`.
 
+* Collect all files recursively and remove `aui-` namespace from CSS rules.
+
+    ```
+ya css-namespace-remove --file index.html
+    ```
+
+    Turns `<div class="aui-container">` into `<div class="container">`.
+
 ### AlloyUI.com
 
-Provides a set of util commands to work with [AlloyUI.com](http://github.com/liferay/alloyui.com) project.
+Provides a set of util commands to work with [AlloyUI.com](http://github.com/liferay/alloyui.com)
+project.
 
 * Run the website locally and watch for any changes.
 
@@ -93,13 +108,16 @@ Provides a set of util commands to work with [AlloyUI.com](http://github.com/lif
 ya site-watch
 	```
 
-* Deploy the website to alloyui.com.
+* Deploy the API docs to [alloyui.com/api](http://alloyui.com/api/).
 
 	```
 ya site-deploy
 	```
 
-	In order to see your changes live at http://alloyui.com you'll need a git remote pointing to liferay's repository. You can do that by running `git remote add upstream git@github.com:liferay/alloyui.com.git`. Then, when you get asked about what remote do you want to deploy, just answer `upstream`.
+	In order to see your changes live at [alloyui.com](http://alloyui.com) you'll
+	need a git remote pointing to liferay's repository. You can do that by running
+	`git remote add upstream git@github.com:liferay/alloyui.com.git`. Then, when
+	you get asked about what remote do you want to deploy, just answer `upstream`.
 
 ### API Docs
 
@@ -117,7 +135,18 @@ ya api-watch
 	```
 ya api-build
 	```
-	This command will scan all JavaScript files inside of your current folder to generate a documentation on `api` folder. You can also set a specific source/destination folder by answering command's questions.
+	This command will scan all JavaScript files inside of your current folder to
+	generate a documentation on `api` folder. You can also set a specific
+	source/destination folder by answering command's questions.
+
+* Deploy the website to alloyui.com.
+
+	```
+ya api-deploy
+	```
+
+	Make sure to run `ya init` to download all dependencies before running this
+	command.
 
 ## Contributing
 
