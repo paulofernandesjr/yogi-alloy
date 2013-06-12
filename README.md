@@ -201,4 +201,5 @@ ya my-command
 ## History
 
 * **v0.1.0** June 12, 2013
+  * Add `--yui` build flag
 	* Rename `--js` build flag to `--aui`
