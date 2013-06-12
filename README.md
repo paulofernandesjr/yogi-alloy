@@ -54,7 +54,7 @@ ya init
 * Build components guessing what do build.
 
 	```
-ya build [--js, --css, --fast]
+ya build [--aui, --css, --fast,  --watch, --yui]
 	```
 
 	If you run this command inside of a component folder, e.g. `src/aui-audio`,
@@ -201,5 +201,5 @@ ya my-command
 ## History
 
 * **v0.1.0** June 12, 2013
-  * Add `--yui` build flag
+  * Add `--yui`, `--watch` build flags
 	* Rename `--js` build flag to `--aui`
