@@ -1,9 +1,22 @@
-# yogi alloy
+# yogi alloy [![NPM version](https://badge.fury.io/js/yogi-alloy.png)](http://badge.fury.io/js/yogi-alloy)
 
 ![Pixel Alloy](http://cl.ly/image/110y3s2w2n1l/yogi.jpg)
 
-This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi)
+> This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http://yui.github.com/yogi)
 command line tool.
+
+## Table of contents
+
+* [Usage](#usage)
+* [Dependencies](#dependencies)
+* [Install](#install)
+* [Available commands](#available-commands)
+    * [AlloyUI](#alloyui)
+    * [Alloy Twitter Bootstrap](#alloy-twitter-bootstrap)
+    * [AlloyUI.com](#alloyuicom)
+    * [API Docs](#api-docs)
+* [Contributing](#contributing)
+* [History](#history)
 
 ## Usage
 
