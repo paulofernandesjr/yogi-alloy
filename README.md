@@ -8,16 +8,16 @@ This project provides common [AlloyUI](http://alloyui.com) tasks for [yogi](http
 
 	ya [command] [--flags]
 
-## Install
-
-	npm -g install yogi yogi-alloy yuidocjs docpad shifter
-
 ## Dependencies
 
 In order to sucessfully run all yogi alloy commands you must have the following dependencies installed:
 
 1. [Node.js](http://nodejs.org/download/)
 2. [Compass](http://compass-style.org/install/)
+
+## Install
+
+	npm -g install yogi yogi-alloy yuidocjs docpad shifter
 
 ## Available commands
 
