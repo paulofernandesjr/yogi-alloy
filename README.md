@@ -184,3 +184,8 @@ ya my-command
 	```
 
 > **Note:** These instructions works on unix-based systems. If you're on Windows, [check instructions here](https://github.com/liferay/yogi-alloy/wiki/Contributing-(Windows)).
+
+## History
+
+* **v0.1.0** June 12, 2013
+	* Rename `--js` build flag to `--aui`
