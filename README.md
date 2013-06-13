@@ -54,7 +54,7 @@ ya init
 * Build components guessing what do build.
 
 	```
-ya build [--aui, --css, --fast,  --watch, --yui]
+ya build [--all, --aui, --css, --fast, --watch, --yui]
 	```
 
 	If you run this command inside of a component folder, e.g. `src/aui-audio`,
