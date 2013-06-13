@@ -201,5 +201,5 @@ ya my-command
 ## History
 
 * **v0.1.0** June 12, 2013
-  * Add `--yui`, `--watch` build flags
+  * Add `--all`, `--yui`, `--watch` build flags
 	* Rename `--js` build flag to `--aui`
