@@ -24,7 +24,7 @@ command line tool.
 
 ## Dependencies
 
-In order to sucessfully run all yogi alloy commands you must have the following
+In order to sucessfully run all yogi alloy commands you **must** have the following
 dependencies installed:
 
 1. [Node.js v0.8](http://nodejs.org/dist/v0.8.2/)
