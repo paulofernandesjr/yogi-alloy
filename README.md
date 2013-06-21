@@ -200,6 +200,8 @@ ya my-command
 
 ## History
 
+* **v0.0.52** June 20, 2013
+	* Rename `alloy-twitter-bootstrap` project to `alloy-bootstrap`
 * **v0.0.51** June 12, 2013
 	* Add `--all`, `--yui`, `--watch` build flags
 	* Rename `--js` build flag to `--aui`
