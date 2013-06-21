@@ -27,7 +27,7 @@ command line tool.
 In order to sucessfully run all yogi alloy commands you must have the following
 dependencies installed:
 
-1. [Node.js](http://nodejs.org/download/)
+1. [Node.js v0.8](http://nodejs.org/dist/v0.8.2/)
 2. [Compass](http://compass-style.org/install/)
 
 ## Install
