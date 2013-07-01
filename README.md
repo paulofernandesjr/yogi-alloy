@@ -12,7 +12,7 @@ command line tool.
 * [Install](#install)
 * [Available commands](#available-commands)
     * [AlloyUI](#alloyui)
-    * [Alloy Twitter Bootstrap](#alloy-twitter-bootstrap)
+    * [Alloy Bootstrap](#alloy-bootstrap)
     * [AlloyUI.com](#alloyuicom)
     * [API Docs](#api-docs)
 * [Contributing](#contributing)
@@ -45,21 +45,74 @@ ya help
 Provides a set of util commands to work with [AlloyUI](http://github.com/liferay/alloy-ui)
 project.
 
-* Clone or update all dependencies. Also incorporate `ya build` task.
+#### Init
+
+* This is the **first command you should run**. It will clone or update all dependencies and also build them using `ya build`.
 
 	```
 ya init
 	```
 
-* Build components guessing what do build.
+#### Build
+
+* Build module(s).
 
 	```
-ya build [--all, --aui, --css, --fast, --watch, --yui]
+ya build
 	```
 
-	If you run this command inside of a component folder, e.g. `src/aui-audio`,
-	it will build only that component on `build/aui-audio`. If you run this
-	command inside of the root folder it will build all components on `build` folder.
+	If you run this command inside of the root or `src` folder it will build **all
+	modules** and copy them to `build` folder. If you run this command inside of a module folder,
+	e.g. `src/aui-audio`, it will build only that module and copy it to `build/aui-audio`.
+
+* Build module(s) and watch for any changes.
+
+	```
+ya build --watch
+	```
+
+* Build module(s) and cache it to make build process faster.
+
+	```
+ya build --cache
+	```
+
+* Build module(s) and validate its code using JSLint.
+
+	```
+ya build --lint
+	```
+
+* Build `aui-base` which will update every module dependencies.
+
+	```
+ya build --loader
+	```
+
+* Build [Alloy Bootstrap](http://github.com/liferay/alloy-bootstrap) project.
+
+	```
+ya build --css
+	```
+
+	This will generate a `build/aui-css` folder that contains Bootstrap's CSS.
+
+* Build [YUI](http://github.com/liferay/yui3) project.
+
+	```
+ya build --yui
+	```
+
+	This will build all YUI modules inside of `build` folder.
+
+* Build all modules using all options (`--cache`, `--lint`, `--loader`, `--css`, `--yui`).
+
+	```
+ya build --all
+	```
+
+
+#### Create
 
 * Create a new module. For example:
 
@@ -69,6 +122,8 @@ ya create --name foo
 
 	This will generate a `src/aui-foo` folder containing the module scaffolding.
 
+#### Release
+
 * Release a new version.
 
 	```
@@ -77,10 +132,9 @@ ya release
 
 	This will generate a ready-to-release version of AlloyUI inside of a .zip file.
 
-### Alloy Twitter Bootstrap
+### Alloy Bootstrap
 
-Provides a set of util commands to work with [Alloy Twitter Bootstrap](http://github.com/liferay/alloy-twitter-bootstrap)
-project.
+Provides a set of util commands to work with [Alloy Bootstrap](http://github.com/liferay/alloy-bootstrap) project.
 
 * Compile SASS files to CSS.
 
