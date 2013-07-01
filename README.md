@@ -254,6 +254,14 @@ ya my-command
 
 ## History
 
+* **v0.0.56** July 1, 2013
+	* Add options to build task (`--cache`, `--coverage`, `--lint`) and removed `--aui`
+* **v0.0.55** June 27, 2013
+	* Fix `ya init` build CSS
+* **v0.0.54** June 27, 2013
+	* Removing unnecessary folder removal, since gh-pages branch is now ignoring it
+* **v0.0.53** June 25, 2013
+	* Show clone/update status on `ya init` command
 * **v0.0.52** June 20, 2013
 	* Rename `alloy-twitter-bootstrap` project to `alloy-bootstrap`
 * **v0.0.51** June 12, 2013
