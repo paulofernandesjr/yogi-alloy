@@ -254,6 +254,10 @@ ya my-command
 
 ## History
 
+* **v0.0.58** July 9, 2013
+	* Fix path parameter overwrite
+* **v0.0.57** July 9, 2013
+	* Rename AlloyUI API Docs Theme project
 * **v0.0.56** July 1, 2013
 	* Add options to build task (`--cache`, `--coverage`, `--lint`) and removed `--aui`
 * **v0.0.55** June 27, 2013
