@@ -255,6 +255,8 @@ ya my-command
 
 ## History
 
+* **v0.0.59** July 9, 2013
+	* Accept exceptions on `ya build --all`
 * **v0.0.58** July 9, 2013
 	* Fix path parameter overwrite
 * **v0.0.57** July 9, 2013
