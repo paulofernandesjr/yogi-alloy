@@ -111,6 +111,7 @@ ya build --yui
 ya build --all
 	```
 
+	You can also disable one or more options. For example, if you want to disable linting and coverage type: `ya build --all --no-lint --no-coverage`
 
 #### Create
 
